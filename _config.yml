@@ -1,5 +1,5 @@
 name: Awesome Research Group
-url: http://awesome.example.edu
+url: https://patrickstuedi.github.io/blog3/
 
 exclude: [bibble, README.md, Makefile, screenshot.png]
 
@@ -27,7 +27,7 @@ roles:
 front_page_news: 8
 
 # Base pathname for links.
-base: ''
+base: 'https://patrickstuedi.github.io/blog3/'
 
 # Navigation bar links.
 navigation:
