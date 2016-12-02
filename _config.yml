@@ -29,6 +29,9 @@ front_page_news: 0
 # Base pathname for links.
 base: 'https://patrickstuedi.github.io/blog3/'
 
+# gem dependencies
+gems: [jekyll-paginate, jekyll-feed, jekyll-gist]
+
 # Navigation bar links.
 navigation:
     - title: Home
