@@ -1,15 +1,21 @@
 name: The Crail Project
-url: https://raduioanstoica.github.io/blog3
+url: https://raduioanstoica.github.io/
 
 exclude: [bibble, README.md, Makefile, screenshot.png]
 
 # use this library to parse Markdown
 markdown: kramdown
+highlighter: rouge
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+port: 8888
+permalink: /blog/:title
+wpm: 150
+
 #redcarpet:
 #    extensions: [smart, tables]
 
 # colorize code snippets with the pygments module
-pygments: true
+highlighter: true
 
 # The path structure for blog posts.
 permalink: /blog/:year/:month/:day/:title.html
@@ -27,7 +33,7 @@ roles:
 front_page_news: 0
 
 # Base pathname for links.
-base: 'https://raduioanstoica.github.io/blog3'
+base: 'https://raduioanstoica.github.io/'
 
 # gem dependencies
 gems: [jekyll-paginate, jekyll-feed, jekyll-gist]
@@ -41,7 +47,7 @@ navigation:
     - title: Research
       link: /research/
     - title: Blog
-      link: /blog.html
+      link: /blog/
     - title: Code
       link: /code.html
 
