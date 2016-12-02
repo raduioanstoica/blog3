@@ -37,7 +37,7 @@ navigation:
       link: /people.html
     - title: Research
       link: /research/
-    - title: Publications
-      link: /publications.html
+    - title: Blog
+      link: /blog.html
     - title: Code
       link: /code.html
