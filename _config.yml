@@ -36,7 +36,7 @@ roles:
 front_page_news: 5
 
 # Base pathname for links.
-#base: 'https://raduioanstoica.github.io'
+base: 'https://raduioanstoica.github.io'
 
 
 # gem dependencies
