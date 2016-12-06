@@ -99,9 +99,31 @@ body {
 }
 
 /* People list */
-dl.people dd {
-    margin-bottom: 1em;
+dl.people dl {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0
+  margin-bottom: 5em;
 }
+
+dl.people dd {
+ /* float: left; */
+  width: 80%;
+  /* adjust the width; make sure the total of both is 100% */
+  padding: 0;
+  margin-bottom: 1em;
+}
+
+dl.people dt {
+  float: left;
+  width: 20%;
+  /* adjust the width; make sure the total of both is 100% */
+  padding: 0;
+  margin: 0
+  margin-bottom: 5em;
+}
+
 
 /* Front page news. */
 ul.news .date {

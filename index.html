@@ -5,28 +5,30 @@ notitle: true
 ---
 <div class="jumbotron">
   <p>
-    The <b>Awesome Research Group</b> at <b>Example U</b> does all sorts of
-    research. Here is a place where we tell you exactly what that is!
+    <h3> The <b>Crail</b> Project at <b> IBM Research – Zurich</b>  </h3>
+  </p>
+  <p>
+    High-Performance Data Processing using Fast Storage and Networking Hardware
   </p>
 </div>
 
 <h2>News</h2>
 <ul class="news list-unstyled">
-{% for post in site.posts limit: site.front_page_news %}
+{% for post in site.categories.news limit: site.front_page_news %}
     {% if post.shortnews %}
         <li class="shortnews">
-            <span class="date">{{ post.date | date_to_long_string }}</span>
+            <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
             {{ post.content }}
         </li>
     {% else %}
         <li class="bloglink">
-            <span class="date">{{ post.date | date_to_long_string }}</span>
+            <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
             <a href="{{ post.url }}">&raquo; {{ post.title }}</a>
         </li>
     {% endif %}
 {% endfor %}
 </ul>
-{% assign numposts = site.posts | size %}
+{% assign numposts = site.categories.news | size %}
 {% if numposts >= site.front_page_news %}
-<p><a href="{{ site.base }}/blog/">Older posts&hellip;</a></p>
+<p><a href="{{ site.base }}/news/">Older posts&hellip;</a></p>
 {% endif %}

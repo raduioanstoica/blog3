@@ -7,9 +7,15 @@ title: People
   <h3>{{ role.name }}</h3>
   <dl class="people">
   {% for item in site.data.people %}
-    {% assign person = item[1] %}
-    {% if person.role == role.key %}
+    {% assign person = item[1] %} 
+     {% if person.role == role.key %} 
       <dt class="person">
+	{% if person.picture %}
+           <figure>
+           <img src="{{ site.base }}/{{ person.picture }}" alt=" {{ person.name }} " style="height:100px;">
+           <figcaption>
+        {% endif %}
+       
         {% if person.webpage %}
         <a href="{{ person.webpage |escape }}">
         {% endif %}
@@ -17,13 +23,20 @@ title: People
         {% if person.webpage %}
         </a>
         {% endif %}
+        
+        {% if person.picture %}
+            </figcaption>
+            </figure>
+        {% endif %}
       </dt>
-      <dd>
+
+      <dd class="person">
         {% if person.bio %}
           {{ person.bio | markdownify }}
         {% endif %}
       </dd>
-    {% endif %}
+     {% endif %} 
   {% endfor %}
   </dl>
+  <br>
 {% endfor %}
