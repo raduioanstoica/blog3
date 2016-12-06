@@ -99,6 +99,7 @@ body {
 }
 
 /* People list */
+/*
 dl.people dl {
   width: 100%;
   overflow: hidden;
@@ -108,9 +109,8 @@ dl.people dl {
 }
 
 dl.people dd {
- /* float: left; */
+  float: left;
   width: 80%;
-  /* adjust the width; make sure the total of both is 100% */
   padding: 0;
   margin-bottom: 1em;
 }
@@ -118,12 +118,11 @@ dl.people dd {
 dl.people dt {
   float: left;
   width: 20%;
-  /* adjust the width; make sure the total of both is 100% */
   padding: 0;
   margin: 0
   margin-bottom: 5em;
 }
-
+*/
 
 /* Front page news. */
 ul.news .date {

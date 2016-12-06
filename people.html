@@ -4,39 +4,36 @@ title: People
 ---
 
 {% for role in site.roles %}
-  <h3>{{ role.name }}</h3>
-  <dl class="people">
-  {% for item in site.data.people %}
-    {% assign person = item[1] %} 
-     {% if person.role == role.key %} 
-      <dt class="person">
-	{% if person.picture %}
-           <figure>
-           <img src="{{ site.base }}/{{ person.picture }}" alt=" {{ person.name }} " style="height:100px;">
-           <figcaption>
-        {% endif %}
-       
-        {% if person.webpage %}
-        <a href="{{ person.webpage |escape }}">
-        {% endif %}
-          {{ person.display_name }}
-        {% if person.webpage %}
-        </a>
-        {% endif %}
-        
-        {% if person.picture %}
-            </figcaption>
-            </figure>
-        {% endif %}
-      </dt>
-
-      <dd class="person">
-        {% if person.bio %}
-          {{ person.bio | markdownify }}
-        {% endif %}
-      </dd>
-     {% endif %} 
-  {% endfor %}
-  </dl>
-  <br>
+    {% assign people = (site.data.people | where: "role", role.key) | sort: "last_name" %} 
+    {% if people != empty %}
+        <h3>{{ role.name }}</h3>
+        <dl class="people">
+        {% for person in people %} 
+             <dt class="person">
+             {% if person.picture %}
+                 <figure>
+                   <img src="{{ site.base }}/{{ person.picture }}" alt=" {{ person.name }} " style="height:100px;">
+                   <figcaption>
+             {% endif %} 
+             {% if person.webpage %}
+               <a href="{{ person.webpage |escape }}">
+             {% endif %}
+             {{ person.display_name }}
+             {% if person.webpage %}
+               </a>
+             {% endif %}
+             {% if person.picture %}
+               </figcaption>
+               </figure>
+             {% endif %}
+             </dt>
+             <dd class="person">
+               {% if person.bio %}
+                  {{ person.bio | markdownify }}
+               {% endif %}
+             </dd>
+        {% endfor %}
+        </dl>
+        <br>
+  {% endif %}
 {% endfor %}
